@@ -21,7 +21,6 @@ int main(){
     printf("Address of age using pointer to pointer: %p\n", (void*)&age_pointer); // Address of the pointer itself
     printf("Address of age using pointer to pointer: %p\n", (void*)age_pointer_pointer); // Address stored in the pointer to pointer
     printf("Address of age using pointer to pointer: %p\n", (void*)&age_pointer_pointer); // Address of the pointer to pointer itself
-    printf("Address of age using pointer to pointer: %p\n", (void*)*age_pointer_pointer); // Address stored in the pointer to pointer
     
     return 0;
 }
