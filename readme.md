@@ -32,6 +32,7 @@ gcc filename.c -o output
 ./output
 gcc fibonacci.c -o fibonacci
 ./fibonacci
+```
 
 📅 Update Log
 ✅ Daily updates are made to maintain GitHub streak and track progress.
@@ -41,7 +42,6 @@ gcc fibonacci.c -o fibonacci
 📘 License
  This project is licensed under the MIT License.
 
-    
 ---
 
 Let me know if you'd like to:
