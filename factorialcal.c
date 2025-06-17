@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //Calculate the factorial of a number using recursion
 
 #include <stdio.h>
@@ -27,7 +26,8 @@ int factorial(int n) { // Definition of the factorial function
     } else {
         return n * factorial(n - 1); // Recursive case
     }
-=======
+}
+
 //Calculate the factorial of a number using recursion
 
 #include <stdio.h>
@@ -56,5 +56,5 @@ int factorial(int n) { // Definition of the factorial function
     } else {
         return n * factorial(n - 1); // Recursive case
     }
->>>>>>> 88500897636fb9c7df191d5ce289e5fc6b7a2b42
+
 }
