@@ -24,6 +24,7 @@ C_MINOR_PRACTICES/
 | `primenumber.c`          | Checks if a number is prime                 |
 | `reversenumber.c`        | Reverses a given number                     |
 | `non_duplicate_digits.c` | Checks if a number contains only unique digits |
+| `oddoreven.c`            | Checks the input number is even or odd      |
 
 ## 🚀 How to Run
 
