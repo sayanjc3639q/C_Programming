@@ -40,7 +40,7 @@ Run:
 ```
 Replace filename with your program name (e.g., hello).
 
-📝 Contribution Guide
+## 📝 Contribution Guide
 You can add your own C practice problems by:
 
 Creating a .c file with a meaningful name.
@@ -51,7 +51,7 @@ Committing with a descriptive message.
 
 Updating the README with the new file.
 
-📚 Upcoming Additions
+## 📚 Upcoming Additions
 Sorting algorithms (Bubble, Selection, Insertion)
 
 Searching algorithms (Linear, Binary)
