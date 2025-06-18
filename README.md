@@ -39,29 +39,3 @@ Run:
 ./filename.exe
 ```
 Replace filename with your program name (e.g., hello).
-
-## 📝 Contribution Guide
-You can add your own C practice problems by:
-
-Creating a .c file with a meaningful name.
-
-Writing clean, well-commented code.
-
-Committing with a descriptive message.
-
-Updating the README with the new file.
-
-## 📚 Upcoming Additions
-Sorting algorithms (Bubble, Selection, Insertion)
-
-Searching algorithms (Linear, Binary)
-
-File handling in C
-
-Pointer-based problems
-
-Structures & unions
-
-Dynamic memory allocation
-
-Linked list, stack, queue, tree implementations
