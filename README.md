@@ -12,6 +12,7 @@ C_MINOR_PRACTICES/
 ├── non_duplicate_digits.c # Program to check non-duplicate digits
 ├── primenumber.c # Prime number checker
 ├── reversenumber.c # Reverse a number
+├── oddoreven.c # Detect odd or even number from given number
 
 
 ## 🧩 Programs Covered
