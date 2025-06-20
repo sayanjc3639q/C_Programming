@@ -13,6 +13,8 @@ C_MINOR_PRACTICES/
 ├── primenumber.c # Prime number checker
 ├── reversenumber.c # Reverse a number
 ├── oddoreven.c # Detect odd or even number from given number
+├── reversingarray.c # reverse a array
+├── storing_fibonacci_inarray.c # generate fibbonaci and store it in array
 
 
 ## 🧩 Programs Covered
@@ -26,6 +28,8 @@ C_MINOR_PRACTICES/
 | `reversenumber.c`        | Reverses a given number                     |
 | `non_duplicate_digits.c` | Checks if a number contains only unique digits |
 | `oddoreven.c`            | Checks the input number is even or odd      |
+| `reversingarray.c`       | reverse a array                             |
+| `storing_fibonacci_inarray.c` | generate fibbonaci and store it in array |
 
 ## 🚀 How to Run
 
