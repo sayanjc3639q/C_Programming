@@ -5,17 +5,8 @@ Welcome to the **C_MINOR_PRACTICES** repo! This repository contains a curated co
 ## 📁 Folder Structure
 
 C_MINOR_PRACTICES/
-├── factorialcal.c # Program to calculate factorial
-├── fibonacci.c # Program to generate Fibonacci series
-├── hello.c # Basic Hello World program
-├── hello.exe # Compiled output (ignored in Git)
-├── non_duplicate_digits.c # Program to check non-duplicate digits
-├── primenumber.c # Prime number checker
-├── reversenumber.c # Reverse a number
-├── oddoreven.c # Detect odd or even number from given number
-├── reversingarray.c # reverse a array
-├── storing_fibonacci_inarray.c # generate fibbonaci and store it in array
-├──findlrgnumberinarray.c 
+|-- Level up
+|-- all other simple programs
 
 
 ## 🧩 Programs Covered
@@ -32,6 +23,7 @@ C_MINOR_PRACTICES/
 | `reversingarray.c`       | reverse a array                             |
 | `storing_fibonacci_inarray.c` | generate fibbonaci and store it in array |
 |`findlrgnumberinarray.c`| This code finds the largest number in array|
+|`countingvowels.c`| This program counts all the vowels present in the word|
 
 ## 🚀 How to Run
 
