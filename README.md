@@ -24,6 +24,7 @@ C_MINOR_PRACTICES/
 | `storing_fibonacci_inarray.c` | generate fibbonaci and store it in array |
 |`findlrgnumberinarray.c`| This code finds the largest number in array|
 |`countingvowels.c`| This program counts all the vowels present in the word|
+|`texttonumber.c`| Convert Word to number|
 
 ## 🚀 How to Run
 
