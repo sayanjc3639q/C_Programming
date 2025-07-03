@@ -12,8 +12,6 @@ int main(){
     printf("The Multiplication (product) of these numbers : %d \n",a * b); // this will multiply two numbers
     printf("The Division (quotient) of these numbers : %d \n",a / b); // this will return the quotient
     printf("The Modulus (reminder) of these numbers : %d \n",a % b); // this will return the reminder
-    printf("The Increment of a : %d \n",++a); // this will increment a by 1
-    printf("The Decrement of b : %d",--b); // this will decrement b by 1
 
     return 0;
 }
