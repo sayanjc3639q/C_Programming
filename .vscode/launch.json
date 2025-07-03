@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/WEB HELP LINE/Documents/C_minor_practices",
-      "program": "c:/Users/WEB HELP LINE/Documents/C_minor_practices/build/Debug/outDebug",
+      "cwd": "c:/Users/WEB HELP LINE/Documents/Level UP C",
+      "program": "c:/Users/WEB HELP LINE/Documents/Level UP C/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

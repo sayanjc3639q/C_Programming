@@ -126,3 +126,5 @@ gcc hello_world.c -o hello
 Let’s level up C programming together 💻🔥
 
 ---
+
+All 150 concepts and questions → check [C_Language_Roadmap.md](./C_Language_Roadmap.md)
