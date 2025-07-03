@@ -16,3 +16,18 @@ int main(){
 
     return 0;
 }
+
+// alternative : by taking input from the user
+    void alternative_main(){
+        int a, b, sum; // we will not assign value here we will take input from user
+        printf("Enter the first number : ");
+        scanf("%d",&a); // syntax : scanf("format_specifier",&variable)
+        printf("Enter the second number : ");
+        scanf("%d",&b);
+
+        sum = a + b; // calculate the sum , same as before
+
+        printf("The sum is : %d",sum);
+        
+     // when using insdie int main() function add return 0; 
+    }
