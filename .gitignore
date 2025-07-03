@@ -1,2 +1,8 @@
 # VS Code settings
 .vscode/
+
+# Ignore all compiled C outputs
+*.exe
+*.out
+*.obj
+*.o
