@@ -22,6 +22,7 @@ int main(){
     scanf(" %d",&choice); // take user's choice as input
 
     // before we use signs in switch case but now we replaced it by a menu
+    // must remeber to use the break to avoid any inconvinice.
     switch (choice)
     {
     case 1:
