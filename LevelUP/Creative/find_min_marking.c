@@ -2,6 +2,9 @@
  my teacher told me to use ink as minimum as possible, so i have to mark 
  the ruler as minimum as possible but aslo important that
  it must measure all the integer value between 0 to n. write a C program to solve it.*/
+ // Difficulty : Hard
+ // Logics : Medium
+ // Programming : Hard
 
 #include <stdio.h>
 #include <stdlib.h>
