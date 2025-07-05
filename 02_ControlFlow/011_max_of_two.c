@@ -1,7 +1,7 @@
 //11.Find max between two numbers
 #include <stdio.h>
 
-//we will use the ternary operator to find out the maximum number
+//For this question we will use conditional statement if-else
 int main(){
     int num_1, num_2;
     printf("Enter your number 1 :");
@@ -9,16 +9,13 @@ int main(){
     printf("Enter your number 2 : ");
     scanf("%d",&num_2);
 
-    int result = (num_1 > num_2 ? num_1 : num_2);
-    // Explanation of this ternary operator
-    // This operator will check the if the num1 is greater ,if true return num1 if false return num2
-
-    printf("The maximum number is : %d",result);
+    if(num_1 > num_2){
+        printf("%d is greater than %d",num_1,num_2);
+    }else{
+        printf("%d is greater than %d",num_2,num_1);
+    }
 
     return 0;
 }
 
-/*Note : How ternary operator works : 
-    Syntax : (condition ? return_if_true : return_if_false )
-    
-    similar to if(condition){return value}else{return value} */
+// NOTE : We can aslo use ternary operator to find the max, we will do this in this chapter later
