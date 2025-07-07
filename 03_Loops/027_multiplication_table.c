@@ -14,3 +14,11 @@ int main(){
 
     return 0;
 }
+
+// Explanation : for tables the condition or initiation doesnot depend on the user input
+/*  for the loop 1 when i is 1 it will print n * 1 = product;
+    suppouse user input is 4 then
+    loop 1: 4 x 1 = 4
+    ...
+    loop 10: 4 x 10 = 40;
+*/
