@@ -2,7 +2,7 @@
 // 1st we have to make a spcae for the array and shift all the elements after the inserting point
 #include <stdio.h>
 
-void insetelement(int array[],int size, int target,int position);
+void insetelement(int array[],int* size, int target,int position);
 void printarray(int array[],int size);
 
 
@@ -13,15 +13,15 @@ int main(){
     int position = 5; // Remember this is position not index, position 5 = index 4
     printf("The default array is : ");
     printarray(array,size);
-    insetelement(array,size,target,position);
+    insetelement(array,&size,target,position);
     printf("The new array is : ");
     printarray(array,size);
     return 0;
 }
 
-void insetelement(int array[],int size, int target,int position){
-    size++; // We have to increase the spcae of the array to insert an element
-    for (int i = size; i >= position ; i--){ // from the postion to the end of array this loop will create a space fot the new element
+void insetelement(int array[],int* size, int target,int position){
+    *size++; // We have to increase the spcae of the array to insert an element
+    for (int i = *size; i >= position ; i--){ // from the postion to the end of array this loop will create a space fot the new element
         array[i] = array[i-1];
     }
     array[position-1] = target; 
