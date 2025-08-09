@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Q&A (1-72)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #334155;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+        }
+        pre {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            position: relative;
+        }
+        code {
+            font-family: 'Fira Code', monospace;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: #334155;
+            color: #e2e8f0;
+            border: none;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background-color 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #475569;
+        }
+        .flowchart {
+            background-color: #f1f5f9;
+            border: 1px dashed #94a3b8;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            white-space: pre;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+        }
+        /* Sidebar styles */
+        #sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Custom Scrollbar for Webkit browsers */
+        #nav-links::-webkit-scrollbar {
+            width: 8px;
+        }
+        #nav-links::-webkit-scrollbar-track {
+            background-color: #1e293b; /* slate-800 */
+        }
+        #nav-links::-webkit-scrollbar-thumb {
+            background-color: #475569; /* slate-600 */
+            border-radius: 10px;
+            border: 2px solid #1e293b; /* slate-800 */
+        }
+        #nav-links::-webkit-scrollbar-thumb:hover {
+            background-color: #64748b; /* slate-500 */
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <div class="relative min-h-screen md:flex">
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex justify-between items-center bg-white p-4 shadow-md sticky top-0 z-20">
+            <h1 class="text-xl font-bold text-slate-800">C Q&A Menu</h1>
+            <button id="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="bg-slate-800 text-slate-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out z-30 shadow-lg md:shadow-none md:sticky md:top-0 md:h-screen">
+            <h1 class="text-white text-2xl font-bold px-4">Questions</h1>
+            <nav id="nav-links" class="overflow-y-auto h-[calc(100vh-80px)]">
+                <!-- Links will be dynamically generated here -->
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 sm:p-8">
+            <div class="max-w-4xl mx-auto">
+                <header class="text-center mb-12">
+                    <h1>C Programming Q&A</h1>
+                    <p class="text-slate-500 mt-2">A comprehensive list of 72 common C programming questions and answers.</p>
+                </header>
+
+                <div id="questions-container">
+                    <!-- Question 1 -->
+                    <div class="question-card" id="q1">
+                        <h2>1. Difference Between RAM and ROM</h2>
+                        <p>RAM (Random Access Memory) and ROM (Read-Only Memory) are both types of computer memory, but they serve different purposes. Here are the major differences between them:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>RAM (Random Access Memory)</th>
+                                    <th>ROM (Read-Only Memory)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Definition</strong></td>
+                                    <td>Volatile memory used for temporary data storage.</td>
+                                    <td>Non-volatile memory used for permanent storage.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Volatility & Usage</strong></td>
+                                    <td>Volatile - Data is lost when power is turned off. Stores data currently in use by the CPU (OS, applications).</td>
+                                    <td>Non-volatile - Data remains even after power loss. Stores firmware (BIOS, bootloader, embedded systems).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Read/Write</strong></td>
+                                    <td>Read & Write - Data can be modified frequently.</td>
+                                    <td>Read-Only - Data is written once (mostly during manufacturing).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Speed</strong></td>
+                                    <td>Faster - Allows quick access for active processes.</td>
+                                    <td>Slower - Used for long-term storage, not for active processing.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Types</strong></td>
+                                    <td>DRAM (Dynamic RAM), SRAM (Static RAM).</td>
+                                    <td>PROM, EPROM, EEPROM, Flash Memory.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Modification</strong></td>
+                                    <td>Data can be changed anytime.</td>
+                                    <td>Data is permanent or requires special methods to modify (e.g., flashing).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cost</strong></td>
+                                    <td>More expensive per GB.</td>
+                                    <td>Cheaper for permanent storage.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Capacity</strong></td>
+                                    <td>Higher capacity (up to several GBs in modern systems).</td>
+                                    <td>Smaller capacity (MBs to a few GBs).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>Key Takeaways:</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>RAM is temporary, fast, and volatile (used for active tasks).</li>
+                            <li>ROM is permanent, slower, and non-volatile (used for firmware).</li>
+                            <li>RAM loses data when powered off, while ROM retains it.</li>
+                            <li>RAM is used for running applications, whereas ROM stores critical system instructions.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question-card" id="q2">
+                        <h2>2. Components of a Computer System & Their Roles</h2>
+                        <p>A computer system consists of hardware and software components that work together to execute programs. The major components and their roles in program execution are:</p>
+                        <ol class="list-decimal list-inside space-y-4">
+                            <li><strong>Input Unit:</strong> Accepts data and instructions from the user or external devices (e.g., Keyboard, Mouse).</li>
+                            <li><strong>Central Processing Unit (CPU):</strong> The "brain" that performs arithmetic, logical, and control operations. It includes the Control Unit (CU) and Arithmetic Logic Unit (ALU).</li>
+                            <li><strong>Memory Unit (Primary Storage):</strong> Includes RAM (for currently running programs) and ROM (for firmware like BIOS).</li>
+                            <li><strong>Secondary Storage (Auxiliary Memory):</strong> Stores data permanently (e.g., HDD, SSD).</li>
+                            <li><strong>Output Unit:</strong> Displays or transmits processed data to the user (e.g., Monitor, Printer).</li>
+                            <li><strong>System Bus:</strong> Connects CPU, Memory, and I/O devices for communication.</li>
+                        </ol>
+                    </div>
+                    
+                    <!-- ... All other question cards from 3 to 72 go here ... -->
+                    <!-- Question 3 -->
+                    <div class="question-card" id="q3">
+                        <h2>3. C Language: Definition and Characteristics</h2>
+                        <p>C is a procedural, high-level programming language developed by Dennis Ritchie in 1972 at Bell Labs. It was designed for system programming, particularly for writing operating systems like UNIX. It is often called the "mother of all programming languages."</p>
+                        <h3>Key Characteristics:</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>Procedural Programming:</strong> Follows a step-by-step approach using functions.</li>
+                            <li><strong>Mid-Level Language:</strong> Combines features of low-level and high-level languages.</li>
+                            <li><strong>Portability:</strong> C programs can run on different machines with little modification.</li>
+                            <li><strong>Fast and Efficient:</strong> Provides direct memory access via pointers.</li>
+                            <li><strong>Rich Library Support:</strong> Comes with a standard library (e.g., stdio.h, math.h).</li>
+                            <li><strong>Static Typing:</strong> Variables must be declared with a data type before use.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="question-card" id="q4">
+                        <h2>4. Identifier in C</h2>
+                        <p>An identifier is a name given to variables, functions, arrays, structures, etc., in a C program.</p>
+                        <h3>Rules for Declaring Identifier Names:</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Can include letters (A-Z, a-z), digits (0-9), and underscore (_).</li>
+                            <li>Must start with a letter or underscore (not a digit).</li>
+                            <li>Case-sensitive (e.g., `sum`, `Sum`, and `SUM` are different).</li>
+                            <li>Cannot use reserved keywords (e.g., `int`, `if`).</li>
+                            <li>No special symbols allowed (e.g., `!`, `@`, `#`, `$` ).</li>
+                        </ul>
+                        <p class="mt-2"><strong>Valid:</strong> <code>total</code>, <code>_count</code>, <code>sum1</code></p>
+                        <p><strong>Invalid:</strong> <code>5sum</code> (starts with digit), <code>float</code> (keyword), <code>first-name</code> (hyphen not allowed)</p>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="question-card" id="q5">
+                        <h2>5. Number System Conversions</h2>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>(101110)<sub>2</sub> to Decimal:</strong> (1×2<sup>5</sup>) + (0×2<sup>4</sup>) + (1×2<sup>3</sup>) + (1×2<sup>2</sup>) + (1×2<sup>1</sup>) + (0×2<sup>0</sup>) = 32 + 0 + 8 + 4 + 2 + 0 = <strong>46<sub>10</sub></strong></li>
+                            <li><strong>(47)<sub>8</sub> to Binary:</strong> 4 = 100, 7 = 111. Combine: <strong>100111<sub>2</sub></strong></li>
+                            <li><strong>(2F)<sub>16</sub> to Decimal:</strong> (2×16<sup>1</sup>) + (15×16<sup>0</sup>) = 32 + 15 = <strong>47<sub>10</sub></strong></li>
+                            <li><strong>(1001)<sub>2</sub> to Octal:</strong> Group into 3 bits: 001 001. Convert each group: 1 1. Combine: <strong>11<sub>8</sub></strong></li>
+                            <li><strong>(59)<sub>10</sub> to Binary:</strong> Repeatedly divide by 2 and record remainders: <strong>111011<sub>2</sub></strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question-card" id="q6">
+                        <h2>6. Type Casting in C</h2>
+                        <p>Type casting is the process of converting a variable from one data type to another. It allows programmers to temporarily change the type of a variable for a specific operation.</p>
+                        <h3>Types of Type Casting</h3>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li><strong>Implicit Type Casting (Automatic):</strong> Done by the compiler from a lower to a higher data type (e.g., `int` to `float`).</li>
+                            <li><strong>Explicit Type Casting (Manual):</strong> Done by the programmer using the cast operator `(datatype)` (e.g., `(int)5.7`).</li>
+                        </ol>
+                        <h3>Example: Explicit Casting for Division</h3>
+                        <pre><button class="copy-btn">Copy</button><code>int x = 5, y = 2;
+float result = (float)x / y; // Cast x to float for float division
+printf("%f", result); // Output: 2.500000</code></pre>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question-card" id="q7">
+                        <h2>7. Difference Between Algorithm and Flowchart</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Algorithm</th>
+                                    <th>Flowchart</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Definition</strong></td>
+                                    <td>Step-by-step procedure to solve a problem.</td>
+                                    <td>Graphical representation of an algorithm using symbols.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Form</strong></td>
+                                    <td>Textual (written in simple language or pseudocode).</td>
+                                    <td>Visual (uses shapes like rectangles, diamonds, arrows).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ease of Understanding</strong></td>
+                                    <td>Requires basic programming knowledge.</td>
+                                    <td>Easier to understand (even for non-programmers).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Modification</strong></td>
+                                    <td>Easier to modify (text-based).</td>
+                                    <td>Harder to modify (requires redrawing).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question-card" id="q8">
+                        <h2>8. Types of Operators in C</h2>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Arithmetic:</strong> `+`, `-`, `*`, `/`, `%`</li>
+                            <li><strong>Relational:</strong> `==`, `!=`, `>`, `<`, `>=`, `<=`</li>
+                            <li><strong>Logical:</strong> `&&`, `||`, `!`</li>
+                            <li><strong>Assignment:</strong> `=`, `+=`, `-=`, `*=`, `/=`</li>
+                            <li><strong>Increment/Decrement:</strong> `++`, `--`</li>
+                            <li><strong>Bitwise:</strong> `&`, `|`, `^`, `~`, `<<`, `>>`</li>
+                            <li><strong>Conditional (Ternary):</strong> `condition ? expr1 : expr2`</li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question-card" id="q9">
+                        <h2>9. Number System Conversions (Detailed)</h2>
+                        <p>This section provides a more detailed look at binary conversions.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Binary to Decimal:</strong> Multiply each bit by 2<sup>n</sup> (where n is its position from the right, starting at 0) and sum the results. Example: (1011)<sub>2</sub> = 8 + 0 + 2 + 1 = 11<sub>10</sub>.</li>
+                            <li><strong>Binary to Octal:</strong> Group binary digits into sets of 3 from the right. Convert each group to its octal equivalent. Example: (110101)<sub>2</sub> -> 110 101 -> 6 5 -> 65<sub>8</sub>.</li>
+                            <li><strong>Binary to Hexadecimal:</strong> Group binary digits into sets of 4 from the right. Convert each group to its hex equivalent. Example: (11101011)<sub>2</sub> -> 1110 1011 -> E B -> EB<sub>16</sub>.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Question 10 -->
+                    <div class="question-card" id="q10">
+                        <h2>10. Operator Precedence and Associativity</h2>
+                        <p><strong>Precedence</strong> determines the order in which operators are evaluated in an expression (e.g., `*` has higher precedence than `+`).</p>
+                        <p><strong>Associativity</strong> determines the order for operators of the same precedence (e.g., `+` and `-` are left-to-right, while `=` is right-to-left).</p>
+                        <p>Parentheses `()` can be used to override the default precedence.</p>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question-card" id="q11">
+                        <h2>11. Algorithm and Flowchart to Check for a Prime Number</h2>
+                        <h3>Algorithm</h3>
+                        <ol class="list-decimal list-inside space-y-1">
+                            <li>Start</li>
+                            <li>Read number n.</li>
+                            <li>If n <= 1, print "Not Prime" and exit.</li>
+                            <li>Set a flag `isPrime = true`.</li>
+                            <li>Loop from i = 2 to sqrt(n).</li>
+                            <li>If n % i == 0, set `isPrime = false` and break the loop.</li>
+                            <li>If `isPrime` is true, print "Prime". Otherwise, print "Not Prime".</li>
+                            <li>Stop.</li>
+                        </ol>
+                        <h3>Flowchart</h3>
+                        <div class="flowchart">
+Start
+  ↓
+Read number n
+  ↓
+Is n <= 1? --(Yes)--> Print "Not Prime" --> End
+  ↓ (No)
+Set i = 2
+  ↓
+Is i <= sqrt(n)? --(No)--> Print "Prime" --> End
+  ↓ (Yes)
+Is n % i == 0? --(Yes)--> Print "Not Prime" --> End
+  ↓ (No)
+i = i + 1
+  ↓
+(Back to "Is i <= sqrt(n)?")
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question-card" id="q12">
+                        <h2>12. C Program to Find Max of Two Numbers (Ternary Operator)</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int num1, num2, max;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    // Find maximum using ternary operator
+    max = (num1 > num2) ? num1 : num2;
+
+    printf("Maximum between %d and %d is: %d\n", num1, num2, max);
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question-card" id="q13">
+                        <h2>13. Differentiate between `for`, `while`, and `do-while` loops</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Loop</th>
+                                    <th>Condition Check</th>
+                                    <th>Minimum Runs</th>
+                                    <th>Typical Use Case</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>for</strong></td>
+                                    <td>Before iteration (Entry-controlled)</td>
+                                    <td>0</td>
+                                    <td>When the number of iterations is known (e.g., iterating over an array).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>while</strong></td>
+                                    <td>Before iteration (Entry-controlled)</td>
+                                    <td>0</td>
+                                    <td>When the number of iterations is unknown and depends on a condition.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>do-while</strong></td>
+                                    <td>After iteration (Exit-controlled)</td>
+                                    <td>1</td>
+                                    <td>When the loop body must be executed at least once (e.g., menu-driven programs).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question-card" id="q14">
+                        <h2>14. C Program to Check Prime Number using `for` loop</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt; // For sqrt() function
+
+int main() {
+    int n, i, isPrime = 1; // isPrime=1 means true
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    if (n <= 1) {
+        isPrime = 0; // 0 and 1 are not prime
+    } else {
+        for (i = 2; i <= sqrt(n); i++) {
+            if (n % i == 0) {
+                isPrime = 0; // Found a divisor, not prime
+                break;
+            }
+        }
+    }
+
+    if (isPrime)
+        printf("%d is a prime number.\n", n);
+    else
+        printf("%d is not a prime number.\n", n);
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question-card" id="q15">
+                        <h2>15. Concept of Nested Loops</h2>
+                        <p>A nested loop is a loop inside another loop. The inner loop completes all its iterations for each single iteration of the outer loop. This is useful for multi-dimensional patterns and matrix operations.</p>
+                        <h3>Example: Print a 3x3 Star Pattern</h3>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int i, j;
+    for (i = 0; i < 3; i++) { // Outer loop for rows
+        for (j = 0; j < 3; j++) { // Inner loop for columns
+            printf("* ");
+        }
+        printf("\n"); // New line after each row
+    }
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question-card" id="q16">
+                        <h2>16. Use of `break` and `continue` statements</h2>
+                        <p><strong>`break` Statement:</strong> Used to terminate the loop immediately. Program control flows to the statement following the loop.</p>
+                        <p><strong>`continue` Statement:</strong> Used to skip the rest of the code inside the current iteration and move to the next iteration of the loop.</p>
+                        <h3>Example:</h3>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Using continue to print odd numbers:\n");
+    for (int i = 1; i <= 10; i++) {
+        if (i % 2 == 0) {
+            continue; // Skip even numbers
+        }
+        printf("%d ", i);
+    }
+
+    printf("\n\nUsing break to stop at 5:\n");
+    for (int i = 1; i <= 10; i++) {
+        if (i == 6) {
+            break; // Stop the loop
+        }
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question-card" id="q17">
+                        <h2>17. C Program to Calculate Factorial of a Number</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int num;
+    long long factorial = 1;
+
+    printf("Enter a non-negative integer: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Error: Factorial is not defined for negative numbers.\n");
+    } else {
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        printf("The factorial of %d is: %lld\n", num, factorial);
+    }
+    
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question-card" id="q18">
+                        <h2>18. C Program to Check if a Number is Positive, Negative, or Zero</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int number;
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    if (number > 0) {
+        printf("%d is a positive number.\n", number);
+    } else if (number < 0) {
+        printf("%d is a negative number.\n", number);
+    } else {
+        printf("%d is zero.\n", number);
+    }
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question-card" id="q19">
+                        <h2>19. Working of the `switch` statement</h2>
+                        <p>The `switch` statement is a control flow statement that allows you to execute different blocks of code based on the value of a single variable or expression (which must be an integer type). It's an alternative to a long `if-else if-else` chain.</p>
+                        <h3>Example: Simple Day of the Week Printer</h3>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int day = 4;
+    switch (day) {
+        case 1: printf("Monday\n"); break;
+        case 2: printf("Tuesday\n"); break;
+        case 3: printf("Wednesday\n"); break;
+        case 4: printf("Thursday\n"); break;
+        case 5: printf("Friday\n"); break;
+        case 6: printf("Saturday\n"); break;
+        case 7: printf("Sunday\n"); break;
+        default: printf("Invalid day\n");
+    }
+    return 0;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Question 20 -->
+                    <div class="question-card" id="q20">
+                        <h2>20. What is a selection statement and explain its types briefly?</h2>
+                        <p>A selection statement (or conditional statement) allows a program to make decisions and execute different blocks of code based on whether a specified condition is true or false.</p>
+                        <h3>Types of Selection Statements:</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>`if` statement:</strong> Executes a block of code only if a condition is true.</li>
+                            <li><strong>`if-else` statement:</strong> Executes one block of code if a condition is true, and another block if it is false.</li>
+                            <li><strong>`if-else if-else` ladder:</strong> Tests a series of conditions sequentially and executes the block corresponding to the first true condition.</li>
+                            <li><strong>`switch` statement:</strong> Chooses among many code blocks based on the value of a single integer or character variable.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question-card" id="q21">
+                        <h2>21. What is a Table of Strings? How to Declare and Initialize it?</h2>
+                        <p>A "table of strings" is a collection of strings. It can be represented in C in two main ways:</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li><strong>2D Character Array:</strong> A fixed-size grid of characters, e.g., <code>char names[5][20];</code>. Wastes memory if strings have varying lengths.</li>
+                            <li><strong>Array of Character Pointers:</strong> An array where each element is a pointer to a string, e.g., <code>char *names[5];</code>. More memory-efficient for strings of varying lengths.</li>
+                        </ol>
+                        <h3>Example Program:</h3>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    // Method 1: 2D Character Array
+    char languages[4][10] = {"C", "Python", "Java", "Go"};
+    printf("--- 2D Array ---\n");
+    for (int i = 0; i < 4; i++) {
+        printf("%s\n", languages[i]);
+    }
+
+    // Method 2: Array of Pointers
+    char *planets[] = {"Mercury", "Venus", "Earth", "Mars"};
+    printf("\n--- Array of Pointers ---\n");
+    int num_planets = sizeof(planets) / sizeof(planets[0]);
+    for (int i = 0; i < num_planets; i++) {
+        printf("%s\n", planets[i]);
+    }
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question-card" id="q22">
+                        <h2>22. C Program to find the sum of all even and odd numbers separately from 1 to N</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int N, sum_even = 0, sum_odd = 0;
+
+    printf("Enter a positive integer (N): ");
+    scanf("%d", &N);
+
+    if (N <= 0) {
+        printf("Error: Please enter a positive integer.\n");
+        return 1;
+    }
+
+    for (int i = 1; i <= N; i++) {
+        if (i % 2 == 0) {
+            sum_even += i;
+        } else {
+            sum_odd += i;
+        }
+    }
+
+    printf("Sum of even numbers from 1 to %d: %d\n", N, sum_even);
+    printf("Sum of odd numbers from 1 to %d: %d\n", N, sum_odd);
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question-card" id="q23">
+                        <h2>23. C Program for Student Exam Eligibility (75% Attendance)</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int total_classes, attended_classes;
+    double percentage;
+
+    printf("Enter total number of classes held: ");
+    scanf("%d", &total_classes);
+    printf("Enter number of classes attended: ");
+    scanf("%d", &attended_classes);
+
+    if (total_classes <= 0) {
+        printf("Invalid total classes.\n");
+        return 1;
+    }
+
+    percentage = ((double)attended_classes / total_classes) * 100.0;
+    printf("Attendance Percentage: %.2f%%\n", percentage);
+
+    if (percentage >= 75.0) {
+        printf("Result: Eligible for exams.\n");
+    } else {
+        printf("Result: NOT eligible for exams.\n");
+    }
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question-card" id="q24">
+                        <h2>24. Compare and contrast `if-else` and `switch`</h2>
+                        <p>Both are selection statements, but they are suited for different scenarios.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>if-else Statement</th>
+                                    <th>switch Statement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Condition Type</strong></td>
+                                    <td>Evaluates boolean expressions (true/false). Can handle complex logic, ranges, and floating-point comparisons.</td>
+                                    <td>Evaluates an integer-type expression (int, char). Checks against multiple discrete, constant values.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Flexibility</strong></td>
+                                    <td>More flexible; can handle any type of condition.</td>
+                                    <td>Less flexible; restricted to integer-type expressions and constant cases.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Readability</strong></td>
+                                    <td>Can become a long, hard-to-read "ladder" with many `else if` conditions.</td>
+                                    <td>Often more readable for a large number of discrete value checks.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Execution Flow</strong></td>
+                                    <td>Executes the first block whose condition is true and skips the rest.</td>
+                                    <td>Jumps to the matching `case`. Requires `break` to prevent "fall-through" to subsequent cases.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question-card" id="q25">
+                        <h2>25. What are different types of pointers?</h2>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Null Pointer:</strong> A pointer that points to nothing (<code>NULL</code>). Used for initialization and to indicate an invalid address.</li>
+                            <li><strong>Void Pointer (<code>void *</code>):</strong> A generic pointer that can hold the address of any data type. Must be cast before dereferencing.</li>
+                            <li><strong>Wild Pointer:</strong> A pointer that has been declared but not initialized. Points to a random memory address and is dangerous to use.</li>
+                            <li><strong>Dangling Pointer:</strong> A pointer that points to a memory location that has been deallocated (freed). Accessing it leads to undefined behavior.</li>
+                            <li><strong>Function Pointer:</strong> A pointer that stores the memory address of a function, allowing functions to be called indirectly.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 26 -->
+                    <div class="question-card" id="q26">
+                        <h2>26. Differentiate between a 1-D and a 2-D array</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>One-Dimensional (1-D) Array</th>
+                                    <th>Two-Dimensional (2-D) Array</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Structure</strong></td>
+                                    <td>Linear list of elements (a single row/column).</td>
+                                    <td>Table/grid of elements organized in rows and columns.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Indexing</strong></td>
+                                    <td>Requires a single index: <code>array[i]</code>.</td>
+                                    <td>Requires two indices (row, column): <code>array[i][j]</code>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Declaration</strong></td>
+                                    <td><code>data_type name[size];</code></td>
+                                    <td><code>data_type name[rows][cols];</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Use Cases</strong></td>
+                                    <td>Storing lists of items, sequences.</td>
+                                    <td>Storing tabular data, matrices, images.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Question 27 -->
+                    <div class="question-card" id="q27">
+                        <h2>27. C program to find the largest element in a 1-D array</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[100], n, i, largest;
+
+    printf("Enter the number of elements (1-100): ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    largest = arr[0]; // Assume first element is largest
+
+    for (i = 1; i < n; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+
+    printf("The largest element in the array is: %d\n", largest);
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 28 -->
+                    <div class="question-card" id="q28">
+                        <h2>28. C program to implement the Linear Search algorithm</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int linearSearch(int arr[], int size, int key) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == key) {
+            return i; // Return index if found
+        }
+    }
+    return -1; // Return -1 if not found
+}
+
+int main() {
+    int arr[] = {10, 2, 8, 5, 17};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int key = 8;
+    int result = linearSearch(arr, n, key);
+
+    if (result == -1) {
+        printf("Element not found in the array.\n");
+    } else {
+        printf("Element found at index: %d\n", result);
+    }
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 29 -->
+                    <div class="question-card" id="q29">
+                        <h2>29. What is recursion? Compare with iteration.</h2>
+                        <p>Recursion is a programming technique where a function calls itself to solve a problem by breaking it down into smaller, identical sub-problems. Every recursive function needs a <strong>base case</strong> to stop the recursion and a <strong>recursive step</strong> where it calls itself.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Recursion</th>
+                                    <th>Iteration (Loops)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Mechanism</strong></td>
+                                    <td>A function calls itself.</td>
+                                    <td>A block of code is repeated using `for`, `while`, etc.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Termination</strong></td>
+                                    <td>Requires a base case.</td>
+                                    <td>Loop condition becomes false.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory Usage</strong></td>
+                                    <td>Uses more memory (call stack). Can cause stack overflow.</td>
+                                    <td>More memory-efficient.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Code Complexity</strong></td>
+                                    <td>Can be more elegant for problems with a recursive structure (e.g., tree traversal).</td>
+                                    <td>Can be more verbose for recursive problems but simpler for linear tasks.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Question 30 -->
+                    <div class="question-card" id="q30">
+                        <h2>30. Explain the working of the Bubble Sort algorithm</h2>
+                        <p>Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. In each pass, the largest unsorted element "bubbles up" to its correct position.</p>
+                        <h3>Example: Sorting `[5, 1, 4, 2, 8]`</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>Pass 1:</strong> [5, 1, 4, 2, 8] → [1, 5, 4, 2, 8] → [1, 4, 5, 2, 8] → [1, 4, 2, 5, 8]. (8 is sorted)</li>
+                            <li><strong>Pass 2:</strong> [1, 4, 2, 5, 8] → [1, 2, 4, 5, 8]. (5 is sorted)</li>
+                            <li><strong>Pass 3:</strong> [1, 2, 4, 5, 8]. No swaps. (4 is sorted)</li>
+                            <li><strong>Pass 4:</strong> [1, 2, 4, 5, 8]. No swaps. (2 is sorted)</li>
+                        </ul>
+                        <p>The final sorted array is `[1, 2, 4, 5, 8]`.</p>
+                    </div>
+
+                    <!-- Question 31 -->
+                    <div class="question-card" id="q31">
+                        <h2>31. Why is Binary Search more efficient than Linear Search?</h2>
+                        <p>Binary search is significantly more efficient for large, <strong>sorted</strong> datasets because it follows a "divide and conquer" strategy.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Linear Search:</strong> Checks every element one by one. Time complexity is O(n). For 1,000,000 elements, it could take up to 1,000,000 comparisons.</li>
+                            <li><strong>Binary Search:</strong> Halves the search space with each comparison. Time complexity is O(log n). For 1,000,000 elements, it takes at most ~20 comparisons.</li>
+                        </ul>
+                        <p>The key trade-off is that Binary Search requires the data to be sorted beforehand, while Linear Search does not.</p>
+                    </div>
+
+                    <!-- Question 32 -->
+                    <div class="question-card" id="q32">
+                        <h2>32. Compare character arrays and strings. Program to concatenate without `strcat()`</h2>
+                        <p>In C, a "string" is a special type of character array: one that is terminated by a null character (`\0`). This null terminator is crucial for standard library functions (`strlen`, `strcpy`, etc.) to know where the string ends.</p>
+                        <h3>Program to Concatenate Strings Manually</h3>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char str1[50] = "Hello, ";
+    char str2[] = "World!";
+    int i, j;
+
+    // Find the end of the first string
+    for (i = 0; str1[i] != '\0'; i++);
+
+    // Copy the second string to the end of the first
+    for (j = 0; str2[j] != '\0'; j++, i++) {
+        str1[i] = str2[j];
+    }
+
+    // Add the null terminator
+    str1[i] = '\0';
+
+    printf("Concatenated String: %s\n", str1);
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 33 -->
+                    <div class="question-card" id="q33">
+                        <h2>33. Differentiate between call by value and call by reference</h2>
+                        <p><strong>Call by Value:</strong> A copy of the argument's value is passed to the function. Changes made to the parameter inside the function do not affect the original variable.</p>
+                        <p><strong>Call by Reference (achieved with pointers in C):</strong> The memory address of the argument is passed. Changes made inside the function (by dereferencing the pointer) affect the original variable.</p>
+                        <h3>Program to Demonstrate Swapping</h3>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+// Call by reference using pointers
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+    printf("Before swap: x = %d, y = %d\n", x, y);
+    swap(&x, &y); // Pass addresses of x and y
+    printf("After swap: x = %d, y = %d\n", x, y);
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <!-- Question 34 -->
+                    <div class="question-card" id="q34">
+                        <h2>34. Recursive function to find the Fibonacci series</h2>
+                        <p>The Fibonacci series is a sequence where each number is the sum of the two preceding ones, starting from 0 and 1. A recursive solution directly models this definition.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+long long fibonacci(int n) {
+    // Base cases
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    // Recursive step
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main() {
+    int terms = 10;
+    printf("Fibonacci Series for %d terms:\n", terms);
+    for (int i = 0; i < terms; i++) {
+        printf("%lld ", fibonacci(i));
+    }
+    printf("\n");
+    return 0;
+}</code></pre>
+                        <p class="mt-2"><strong>How it works:</strong> The function repeatedly calls itself, breaking down the problem (e.g., `fib(4)`) into smaller pieces (`fib(3) + fib(2)`), until it hits the base cases (`fib(1)` or `fib(0)`). The results are then passed back up the call stack to compute the final answer.</p>
+                    </div>
+
+                    <!-- Question 35 -->
+                    <div class="question-card" id="q35">
+                        <h2>35. What are Built-in Library Functions? How are Arrays Passed to Functions?</h2>
+                        <h3>Built-in (Standard Library) Functions</h3>
+                        <p>These are pre-written, optimized functions provided by the C Standard Library to perform common tasks. You include header files like `&lt;stdio.h&gt;`, `&lt;string.h&gt;`, and `&lt;math.h&gt;` to use them.</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>I/O (`&lt;stdio.h&gt;`):</strong> `printf()`, `scanf()`</li>
+                            <li><strong>String (`&lt;string.h&gt;`):</strong> `strlen()`, `strcpy()`</li>
+                            <li><strong>Math (`&lt;math.h&gt;`):</strong> `sqrt()`, `pow()`</li>
+                        </ul>
+                        <h3>How Arrays are Passed to Functions</h3>
+                        <p>In C, arrays are always passed <strong>by reference</strong> (or more accurately, by address). This means when you pass an array to a function, you are passing a pointer to its first element. The function does not get a copy of the array.</p>
+                        <p><strong>Key Implication:</strong> Any modifications made to the array's elements inside the function will affect the original array in the calling scope.</p>
+                    </div>
+
+                    <!-- Questions 36-72 -->
+                    <div class="question-card" id="q36">
+                        <h2>36 & 37. C Program for Student Marks Analysis</h2>
+                        <p>This program accepts marks for N students, finds the highest and lowest marks, sorts the marks in ascending order using Bubble Sort, and searches for a specific mark using Binary Search.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+#include &lt;limits.h&gt; // For INT_MIN and INT_MAX
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+void findMinMax(int arr[], int size, int *min_mark, int *max_mark) {
+    *min_mark = INT_MAX;
+    *max_mark = INT_MIN;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] < *min_mark) *min_mark = arr[i];
+        if (arr[i] > *max_mark) *max_mark = arr[i];
+    }
+}
+
+void bubbleSort(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int binarySearch(int arr[], int size, int key) {
+    int low = 0, high = size - 1;
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == key) return mid;
+        if (arr[mid] < key) low = mid + 1;
+        else high = mid - 1;
+    }
+    return -1;
+}
+
+int main() {
+    int N, marks[100], min_mark, max_mark, search_mark, found_index;
+
+    printf("Enter the number of students (N, max 100): ");
+    scanf("%d", &N);
+
+    printf("Enter marks for %d students:\n", N);
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &marks[i]);
+    }
+
+    printf("\nOriginal Marks: ");
+    printArray(marks, N);
+
+    findMinMax(marks, N, &min_mark, &max_mark);
+    printf("Highest Mark: %d\n", max_mark);
+    printf("Lowest Mark: %d\n", min_mark);
+
+    printf("\nSorting marks...\n");
+    bubbleSort(marks, N);
+    printf("Sorted Marks: ");
+    printArray(marks, N);
+
+    printf("\nEnter a mark to search for: ");
+    scanf("%d", &search_mark);
+    found_index = binarySearch(marks, N, search_mark);
+
+    if (found_index != -1) {
+        printf("Mark %d found at sorted index %d.\n", search_mark, found_index);
+    } else {
+        printf("Mark %d not found.\n", search_mark);
+    }
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q38">
+                        <h2>38. What is a structure in C? How is it different from an array?</h2>
+                        <p>A <strong>structure</strong> (<code>struct</code>) in C is a user-defined data type that groups items of <strong>different data types</strong> under a single name. An <strong>array</strong> groups items of the <strong>same data type</strong>.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Structure (struct)</th>
+                                    <th>Array ([])</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Data Types</strong></td>
+                                    <td>Can group different (heterogeneous) data types.</td>
+                                    <td>Can group only the same (homogeneous) data type.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Element Identification</strong></td>
+                                    <td>Members are identified by names (e.g., <code>student.name</code>).</td>
+                                    <td>Elements are identified by numerical indices (e.g., <code>scores[0]</code>).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Purpose</strong></td>
+                                    <td>To represent a single, complex entity with varied attributes.</td>
+                                    <td>To store a collection of similar items.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="question-card" id="q39">
+                        <h2>39. Differentiate between `struct` and `union` in C</h2>
+                        <p>The key difference is memory allocation. A <strong>struct</strong> allocates memory for <strong>all</strong> its members. A <strong>union</strong> allocates memory only for its <strong>largest</strong> member, and all members share that same memory space.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>struct</th>
+                                    <th>union</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Memory Allocation</strong></td>
+                                    <td>Allocates memory for all members. Size is sum of member sizes (+ padding).</td>
+                                    <td>Allocates memory for the largest member only. Size is size of largest member.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Member Storage</strong></td>
+                                    <td>Each member has its own unique memory location.</td>
+                                    <td>All members share the same memory location.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Simultaneous Access</strong></td>
+                                    <td>All members can be accessed simultaneously.</td>
+                                    <td>Only one member can be actively used at any given time.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="question-card" id="q40">
+                        <h2>40. File Opening Modes in C</h2>
+                        <p>When opening a file with <code>fopen()</code>, you specify a mode string:</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong><code>"r"</code> (Read):</strong> Opens an existing file for reading. File pointer starts at the beginning. Returns <code>NULL</code> if file doesn't exist.</li>
+                            <li><strong><code>"w"</code> (Write):</strong> Opens a file for writing. Creates a new file or <strong>truncates (deletes content of)</strong> an existing file.</li>
+                            <li><strong><code>"a"</code> (Append):</strong> Opens a file for writing. Creates a new file if it doesn't exist. File pointer starts at the <strong>end</strong> of the file to add new content.</li>
+                            <li><strong><code>"r+"</code>:</strong> Opens an existing file for both reading and writing.</li>
+                            <li><strong><code>"w+"</code>:</strong> Opens a file for both reading and writing, but truncates it first.</li>
+                            <li><strong><code>"a+"</code>:</strong> Opens a file for reading and appending.</li>
+                        </ul>
+                    </div>
+
+                    <div class="question-card" id="q41">
+                        <h2>41. C Program to Use a Student Structure</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+struct Student {
+    char name[50];
+    int roll_no;
+    float marks;
+};
+
+int main() {
+    struct Student student1;
+
+    printf("Enter student's Name: ");
+    fgets(student1.name, sizeof(student1.name), stdin);
+    student1.name[strcspn(student1.name, "\n")] = '\0'; // Remove newline
+
+    printf("Enter student's Roll Number: ");
+    scanf("%d", &student1.roll_no);
+
+    printf("Enter student's Marks: ");
+    scanf("%f", &student1.marks);
+
+    printf("\n--- Student Details ---\n");
+    printf("Name: %s\n", student1.name);
+    printf("Roll Number: %d\n", student1.roll_no);
+    printf("Marks: %.2f\n", student1.marks);
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q42">
+                        <h2>42. C Program to Create and Write to a File</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *fptr;
+    char file_name[] = "my_output_file.txt";
+    char content[] = "Hello from C programming!";
+
+    // Open the file in write mode ("w")
+    fptr = fopen(file_name, "w");
+
+    if (fptr == NULL) {
+        printf("Error: Could not create the file '%s'.\n", file_name);
+        return 1;
+    }
+
+    // Write the string to the file
+    fprintf(fptr, "%s\n", content);
+
+    // Close the file to save changes
+    fclose(fptr);
+
+    printf("Successfully wrote to '%s'.\n", file_name);
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q43">
+                        <h2>43. C Program: Struct vs. Union Memory Allocation</h2>
+                        <p>This program demonstrates that a struct's size is the sum of its members (plus padding), while a union's size is that of its largest member.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+struct MyStruct {
+    int i;    // 4 bytes
+    float f;  // 4 bytes
+    char c;   // 1 byte
+};
+
+union MyUnion {
+    int i;
+    float f;
+    char c;
+};
+
+int main() {
+    printf("--- STRUCT ---\n");
+    printf("Total size of MyStruct: %zu bytes\n", sizeof(struct MyStruct));
+    
+    printf("\n--- UNION ---\n");
+    printf("Total size of MyUnion: %zu bytes\n", sizeof(union MyUnion));
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q44">
+                        <h2>44. Difference Between "w" (Write) and "a" (Append) File Modes</h2>
+                        <p><strong><code>"w"</code> (Write mode):</strong> If the file exists, its contents are <strong>deleted</strong> before writing. If it doesn't exist, it's created. Use this to overwrite a file.</p>
+                        <p><strong><code>"a"</code> (Append mode):</strong> If the file exists, new data is <strong>added to the end</strong> of the file, preserving existing content. If it doesn't exist, it's created. Use this for logging or adding records.</p>
+                    </div>
+
+                    <div class="question-card" id="q45">
+                        <h2>45. Union in C: Applications, Advantages, and Disadvantages</h2>
+                        <h3>Applications/Need</h3>
+                        <ul class="list-disc list-inside">
+                            <li><strong>Memory Optimization:</strong> When only one of several data members is needed at any time.</li>
+                            <li><strong>Variant Records:</strong> Creating a structure that can hold different types of data in the same field, often using a "tag" to identify the current type.</li>
+                            <li><strong>Type Punning:</strong> Interpreting the same block of memory as different data types for low-level programming.</li>
+                        </ul>
+                        <h3>Advantages</h3>
+                        <ul class="list-disc list-inside">
+                            <li>Memory efficient.</li>
+                            <li>Flexible for handling varied data types.</li>
+                        </ul>
+                        <h3>Disadvantages</h3>
+                        <ul class="list-disc list-inside">
+                            <li>Not type-safe; programmer must track the active member.</li>
+                            <li>Only one member can hold a value at a time.</li>
+                            <li>Can lead to complex and hard-to-debug code.</li>
+                        </ul>
+                    </div>
+
+                    <div class="question-card" id="q46">
+                        <h2>46. C Program: Storing Records of 5 Students in a Struct Array</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+struct Student {
+    char name[50];
+    int roll_no;
+    float marks;
+};
+
+int main() {
+    struct Student students[5];
+    int i;
+
+    printf("--- Enter Details for 5 Students ---\n");
+    for (i = 0; i < 5; i++) {
+        printf("\nStudent %d\n", i + 1);
+        printf("Name: ");
+        // fgets is safer than gets
+        fgets(students[i].name, sizeof(students[i].name), stdin);
+        students[i].name[strcspn(students[i].name, "\n")] = '\0';
+        
+        printf("Roll Number: ");
+        scanf("%d", &students[i].roll_no);
+        
+        printf("Marks: ");
+        scanf("%f", &students[i].marks);
+
+        // Consume leftover newline for the next fgets
+        while (getchar() != '\n'); 
+    }
+
+    printf("\n--- Displaying Records ---\n");
+    for (i = 0; i < 5; i++) {
+        printf("\nStudent %d:\n", i + 1);
+        printf("Name: %s\n", students[i].name);
+        printf("Roll Number: %d\n", students[i].roll_no);
+        printf("Marks: %.2f\n", students[i].marks);
+    }
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q47">
+                        <h2>47. Nested Structures in C</h2>
+                        <p>Nested structures occur when one structure is a member of another. This is useful for organizing complex data, like an employee record that includes a joining date.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+// Inner structure
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+// Outer structure containing the inner one
+struct Employee {
+    char name[50];
+    int employee_id;
+    struct Date joining_date; // Nested structure
+};
+
+int main() {
+    struct Employee emp1;
+    
+    // Assigning values
+    strcpy(emp1.name, "John Doe");
+    emp1.employee_id = 101;
+    emp1.joining_date.day = 25;   // Accessing nested member
+    emp1.joining_date.month = 10;
+    emp1.joining_date.year = 2023;
+
+    printf("Employee: %s (ID: %d)\n", emp1.name, emp1.employee_id);
+    printf("Joining Date: %02d/%02d/%d\n", emp1.joining_date.day, emp1.joining_date.month, emp1.joining_date.year);
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q48">
+                        <h2>48. C Program: Read Student Records from a File and Filter</h2>
+                        <p>This program reads student records (Name, Roll, Marks) from a text file and displays only those students who scored more than 75 marks.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+struct Student {
+    char name[50];
+    int roll_no;
+    float marks;
+};
+
+int main() {
+    FILE *fptr;
+    char filename[] = "student_records.txt";
+    struct Student s;
+
+    // For demonstration, create a dummy file
+    fptr = fopen(filename, "w");
+    fprintf(fptr, "Alice 101 88.5\nBob 102 65.0\nCharlie 103 90.0\n");
+    fclose(fptr);
+
+    // Open the file for reading
+    fptr = fopen(filename, "r");
+    if (fptr == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    printf("--- Students with marks > 75 ---\n");
+    // Read records until end of file
+    while (fscanf(fptr, "%s %d %f", s.name, &s.roll_no, &s.marks) == 3) {
+        if (s.marks > 75.0) {
+            printf("Name: %s, Roll: %d, Marks: %.2f\n", s.name, s.roll_no, s.marks);
+        }
+    }
+
+    fclose(fptr);
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q49">
+                        <h2>49. C Program: Append User Input to a File</h2>
+                        <p>This program takes user input (Name, Age, City), appends it to a file named `user_data.txt`, and then reads and displays the entire file's contents.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    FILE *fptr;
+    char filename[] = "user_data.txt";
+    char name[50], city[50], buffer[200];
+    int age;
+
+    // Part 1: Get input and append to file
+    printf("Enter Name: ");
+    fgets(name, sizeof(name), stdin);
+    name[strcspn(name, "\n")] = '\0'; // Remove newline
+
+    printf("Enter Age: ");
+    scanf("%d", &age);
+    
+    while (getchar() != '\n'); // Clear buffer
+
+    printf("Enter City: ");
+    fgets(city, sizeof(city), stdin);
+    city[strcspn(city, "\n")] = '\0';
+
+    fptr = fopen(filename, "a"); // "a" for append
+    if (fptr == NULL) return 1;
+    fprintf(fptr, "Name: %s, Age: %d, City: %s\n", name, age, city);
+    fclose(fptr);
+    printf("\nDetails added to %s.\n\n", filename);
+
+    // Part 2: Read and display file
+    printf("--- Contents of %s ---\n", filename);
+    fptr = fopen(filename, "r");
+    if (fptr == NULL) return 1;
+    while (fgets(buffer, sizeof(buffer), fptr) != NULL) {
+        printf("%s", buffer);
+    }
+    fclose(fptr);
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q52">
+                        <h2>52. Flowcharts for Area of Rectangle and Circle</h2>
+                        <h3>Area of Rectangle</h3>
+                        <div class="flowchart">
+Start
+  ↓
+Read length 'l'
+  ↓
+Read breadth 'b'
+  ↓
+Calculate area = l * b
+  ↓
+Print area
+  ↓
+End
+                        </div>
+                        <h3 class="mt-4">Area of Circle</h3>
+                        <div class="flowchart">
+Start
+  ↓
+Read radius 'r'
+  ↓
+Calculate area = 3.14 * r * r
+  ↓
+Print area
+  ↓
+End
+                        </div>
+                    </div>
+
+                    <div class="question-card" id="q53">
+                        <h2>53. Number System Conversions</h2>
+                        <h3>(a) Binary 10110.1100 to Decimal</h3>
+                        <p>For the integer part (10110): (1×16) + (0×8) + (1×4) + (1×2) + (0×1) = 16 + 4 + 2 = 22.</p>
+                        <p>For the fractional part (.1100): (1×0.5) + (1×0.25) + (0×0.125) + (0×0.0625) = 0.5 + 0.25 = 0.75.</p>
+                        <p><strong>Result:</strong> 22 + 0.75 = <strong>22.75<sub>10</sub></strong></p>
+                        <h3 class="mt-4">(b) Decimal 47 to Hexadecimal</h3>
+                        <p>Divide 47 by 16: 47 / 16 = 2 with a remainder of 15 (which is 'F' in hex).</p>
+                        <p>Divide 2 by 16: 2 / 16 = 0 with a remainder of 2.</p>
+                        <p>Read remainders from bottom to top: <strong>2F<sub>16</sub></strong></p>
+                    </div>
+
+                    <div class="question-card" id="q55">
+                        <h2>55. Variables and Storage Classes in C</h2>
+                        <p>A <strong>variable</strong> is a named storage location in memory that holds a value which can change during program execution.</p>
+                        <p>A variable's <strong>storage class</strong> determines its scope (where it's accessible), lifetime (how long it exists), and default initial value.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong><code>auto</code>:</strong> The default for local variables. They exist only within the block they are declared in. Stored on the stack.</li>
+                            <li><strong><code>register</code>:</strong> A hint to the compiler to store the variable in a CPU register for faster access. Cannot have its address taken.</li>
+                            <li><strong><code>static</code>:</strong> A static variable's lifetime is the entire program execution. It retains its value between function calls. Initialized only once.</li>
+                            <li><strong><code>extern</code>:</strong> Declares a global variable that is defined in another source file, telling the compiler that it exists elsewhere.</li>
+                        </ul>
+                    </div>
+
+                    <div class="question-card" id="q56">
+                        <h2>56. Nested `if` Statements</h2>
+                        <p>A nested `if` statement is an `if` statement that is the target of another `if` or `else`. They are used to test for multiple conditions where one decision depends on another.</p>
+                        <h3>Program: Greatest of Three Numbers</h3>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int n1 = 10, n2 = 25, n3 = 15;
+    
+    if (n1 >= n2) {
+        if (n1 >= n3)
+            printf("%d is the largest.\n", n1);
+        else
+            printf("%d is the largest.\n", n3);
+    } else {
+        if (n2 >= n3)
+            printf("%d is the largest.\n", n2);
+        else
+            printf("%d is the largest.\n", n3);
+    }
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q57">
+                        <h2>57. How a C Program is Executed</h2>
+                        <p>The execution of a C program is a multi-stage process:</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li><strong>Writing (Editor):</strong> You write source code in a text file (e.g., `program.c`).</li>
+                            <li><strong>Preprocessing:</strong> The preprocessor handles directives like `#include` and `#define`, creating an expanded source file.</li>
+                            <li><strong>Compilation:</strong> The compiler translates the expanded source code into assembly language, then into a machine-code object file (`.o` or `.obj`).</li>
+                            <li><strong>Linking:</strong> The linker combines your object file(s) with code from standard libraries (like for `printf`) to create a single, executable file (`.exe` or `a.out`).</li>
+                            <li><strong>Loading & Execution:</strong> The operating system's loader loads the executable into memory (RAM), and the CPU begins executing the instructions from the `main()` function.</li>
+                        </ol>
+                    </div>
+
+                    <div class="question-card" id="q58">
+                        <h2>58. Entry-Controlled vs. Exit-Controlled Loops</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Entry-Controlled Loop (`for`, `while`)</th>
+                                    <th>Exit-Controlled Loop (`do-while`)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Condition Check</strong></td>
+                                    <td>Condition is checked <strong>before</strong> the loop body is executed.</td>
+                                    <td>Condition is checked <strong>after</strong> the loop body is executed.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Execution Guarantee</strong></td>
+                                    <td>The loop body may not execute even once.</td>
+                                    <td>The loop body is guaranteed to execute at least once.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="mt-4">A <strong>count-controlled loop</strong> (`for`) runs a fixed number of times. A <strong>condition-controlled loop</strong> (`while`, `do-while`) runs as long as a condition is true.</p>
+                    </div>
+
+                    <div class="question-card" id="q59">
+                        <h2>59. Two-Way Selection Statements (`if`, `if-else`)</h2>
+                        <p>A two-way selection statement provides two possible paths of execution based on a condition.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>`if`:</strong> A single-way selection. Executes a block if the condition is true, otherwise does nothing.</li>
+                            <li><strong>`if-else`:</strong> A true two-way selection. Executes one block if the condition is true, and a different block if false.</li>
+                            <li><strong>Cascaded `if-else if-else`:</strong> A multi-way selection. Checks a series of conditions and executes the block for the first true condition found.</li>
+                        </ul>
+                    </div>
+
+                    <div class="question-card" id="q60">
+                        <h2>60. Difference Between `=` (Assignment) and `==` (Equality)</h2>
+                        <p>This is a fundamental concept and a common source of bugs.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>`=` (Assignment Operator):</strong> Assigns the value on the right to the variable on the left. E.g., <code>x = 5;</code> puts the value 5 into `x`.</li>
+                            <li><strong>`==` (Equality Operator):</strong> Compares the values on both sides. It returns `1` (true) if they are equal and `0` (false) if they are not. E.g., <code>if (x == 5)</code> checks if `x` holds the value 5.</li>
+                        </ul>
+                    </div>
+
+                    <div class="question-card" id="q61">
+                        <h2>61. `switch` Statement with a Menu-Based Program</h2>
+                        <p>The `switch` statement selects one of many code blocks to be executed based on an integer or character expression. It is ideal for menu-driven programs.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+void displayMenu() {
+    printf("\n1. Add\n2. Subtract\n3. Exit\n");
+    printf("Enter choice: ");
+}
+
+int main() {
+    int choice;
+    displayMenu();
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Addition selected.\n");
+            break; // break is crucial
+        case 2:
+            printf("Subtraction selected.\n");
+            break;
+        case 3:
+            printf("Exiting.\n");
+            break;
+        default:
+            printf("Invalid choice.\n");
+    }
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q62">
+                        <h2>62. C Program: Check Number Properties</h2>
+                        <p>This program checks if a user-entered number is Even/Odd, Positive/Negative/Zero, and Divisible by 5.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int number;
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    // Even or Odd
+    if (number % 2 == 0) printf("%d is Even.\n", number);
+    else printf("%d is Odd.\n", number);
+
+    // Positive, Negative, or Zero
+    if (number > 0) printf("%d is Positive.\n", number);
+    else if (number < 0) printf("%d is Negative.\n", number);
+    else printf("The number is Zero.\n");
+
+    // Divisible by 5
+    if (number % 5 == 0) printf("%d is divisible by 5.\n", number);
+    else printf("%d is NOT divisible by 5.\n", number);
+    
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q63">
+                        <h2>63. C Program: Generating Patterns with Nested Loops</h2>
+                        <h3>Right-Angled Triangle Pattern</h3>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int n = 5;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}</code></pre>
+                        <h3 class="mt-4">Floyd's Triangle Pattern</h3>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int n = 5, num = 1;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", num++);
+        }
+        printf("\n");
+    }
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q64">
+                        <h2>64. C Program: Menu-Driven Calculator with `switch`</h2>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int choice;
+    double n1, n2;
+    printf("1.Add 2.Sub 3.Mul 4.Div\nEnter choice: ");
+    scanf("%d", &choice);
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &n1, &n2);
+
+    switch (choice) {
+        case 1: printf("%.2lf + %.2lf = %.2lf\n", n1, n2, n1 + n2); break;
+        case 2: printf("%.2lf - %.2lf = %.2lf\n", n1, n2, n1 - n2); break;
+        case 3: printf("%.2lf * %.2lf = %.2lf\n", n1, n2, n1 * n2); break;
+        case 4: 
+            if (n2 != 0) printf("%.2lf / %.2lf = %.2lf\n", n1, n2, n1 / n2);
+            else printf("Error: Division by zero.\n");
+            break;
+        default: printf("Invalid choice.\n");
+    }
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q66">
+                        <h2>66. C Program: String Operations</h2>
+                        <p>Demonstrates `strlen`, `strcmp`, `strncpy`, converting to lowercase, and reversing a string.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;ctype.h&gt;
+
+void stringReverse(char *str) {
+    int len = strlen(str);
+    for (int i = 0, j = len - 1; i < j; i++, j--) {
+        char temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
+}
+
+int main() {
+    char str1[] = "Hello";
+    char str2[] = "World";
+    char copy[50];
+
+    // Length
+    printf("Length of '%s' is %zu\n", str1, strlen(str1));
+
+    // Comparison
+    printf("Comparison of '%s' and '%s': %d\n", str1, str2, strcmp(str1, str2));
+
+    // Partial Copy
+    strncpy(copy, str1, 3);
+    copy[3] = '\0'; // Manual null-termination
+    printf("First 3 chars of '%s' are '%s'\n", str1, copy);
+
+    // Reverse
+    stringReverse(str1);
+    printf("Reversed string: %s\n", str1);
+
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q67">
+                        <h2>67. Nested Loops in Matrix Operations (Transpose)</h2>
+                        <p>Nested loops are essential for matrix operations. The outer loop iterates through rows, and the inner loop iterates through columns. For a transpose, you swap the row and column indices.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int transpose[3][2];
+    int i, j;
+
+    // Calculate transpose
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 3; j++) {
+            transpose[j][i] = matrix[i][j];
+        }
+    }
+
+    // Display transpose
+    printf("Transposed Matrix:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q68">
+                        <h2>68. Bubble Sort Algorithm</h2>
+                        <p>Bubble Sort repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. In each pass, the largest unsorted element "bubbles up" to its correct position.</p>
+                        <h3>Computation: Sorting `[90, 50, 70, 10, 60, 30]`</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>Pass 1:</strong> [50, 70, 10, 60, 30, <strong>90</strong>]</li>
+                            <li><strong>Pass 2:</strong> [50, 10, 60, 30, <strong>70</strong>, 90]</li>
+                            <li><strong>Pass 3:</strong> [10, 50, 30, <strong>60</strong>, 70, 90]</li>
+                            <li><strong>Pass 4:</strong> [10, 30, <strong>50</strong>, 60, 70, 90]</li>
+                            <li><strong>Pass 5:</strong> [10, <strong>30</strong>, 50, 60, 70, 90]</li>
+                        </ul>
+                        <p><strong>Final Sorted Array:</strong> [10, 30, 50, 60, 70, 90]</p>
+                    </div>
+
+                    <div class="question-card" id="q69">
+                        <h2>69. Selection Sort Algorithm</h2>
+                        <p>Selection Sort works by repeatedly finding the minimum element from the unsorted part of the list and putting it at the beginning of the unsorted part.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+void selectionSort(int arr[], int n) {
+    int i, j, min_idx, temp;
+    for (i = 0; i < n - 1; i++) {
+        min_idx = i;
+        for (j = i + 1; j < n; j++) {
+            if (arr[j] < arr[min_idx])
+                min_idx = j;
+        }
+        // Swap the found minimum element with the first element
+        temp = arr[min_idx];
+        arr[min_idx] = arr[i];
+        arr[i] = temp;
+    }
+}
+
+int main() {
+    int arr[] = {90, 50, 70, 10, 60, 30};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    selectionSort(arr, n);
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++) printf("%d ", arr[i]);
+    printf("\n");
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q70">
+                        <h2>70. Linear Search vs. Binary Search</h2>
+                        <p>Linear search checks every element sequentially (O(n) time), while binary search repeatedly divides a <strong>sorted</strong> array in half (O(log n) time), making it much faster for large datasets.</p>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+// Linear Search: works on any array
+int linearSearch(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target) return i;
+    }
+    return -1;
+}
+
+int main() {
+    int arr[] = {90, 50, 70, 10, 60, 30};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target = 60;
+    int result = linearSearch(arr, n, target);
+    if (result != -1) printf("Found %d at index %d\n", target, result);
+    else printf("%d not found.\n", target);
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q71">
+                        <h2>71. Functions and Recursion</h2>
+                        <p>A <strong>function</strong> is a block of organized, reusable code that performs a single, related action. It provides modularity and reusability.</p>
+                        <p><strong>Recursion</strong> is a technique where a function calls itself to solve a problem. It requires a <strong>base case</strong> to stop the recursion and a <strong>recursive step</strong> that moves closer to the base case.</p>
+                        <h3>Example: Factorial using Recursion</h3>
+                        <pre><button class="copy-btn">Copy</button><code>#include &lt;stdio.h&gt;
+
+long long factorial(int n) {
+    if (n == 0) // Base case
+        return 1;
+    else // Recursive step
+        return n * factorial(n - 1);
+}
+
+int main() {
+    printf("Factorial of 5 is %lld\n", factorial(5));
+    return 0;
+}</code></pre>
+                    </div>
+
+                    <div class="question-card" id="q72">
+                        <h2>72. Recursion vs. Iteration</h2>
+                        <p>Both are used for repetitive tasks. Recursion uses function calls, while iteration uses loops.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Recursion</th>
+                                    <th>Iteration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Approach</strong></td>
+                                    <td>Function calls itself.</td>
+                                    <td>Uses loops (`for`, `while`).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
+                                    <td>Higher (uses call stack). Risk of stack overflow.</td>
+                                    <td>Lower (constant memory usage).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Speed</strong></td>
+                                    <td>Slower due to function call overhead.</td>
+                                    <td>Faster.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Code Size</strong></td>
+                                    <td>Often more concise and elegant.</td>
+                                    <td>Can be more verbose.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const navLinksContainer = document.getElementById('nav-links');
+            const questionsContainer = document.getElementById('questions-container');
+
+            // --- Dynamically generate sidebar links ---
+            const questionCards = questionsContainer.querySelectorAll('.question-card');
+            let linksHTML = '';
+            questionCards.forEach(card => {
+                const id = card.id;
+                const title = card.querySelector('h2').innerText;
+                linksHTML += `<a href="#${id}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-slate-700 hover:text-white">${title}</a>`;
+            });
+            navLinksContainer.innerHTML = linksHTML;
+
+            // --- Sidebar Toggle for Mobile ---
+            mobileMenuButton.addEventListener('click', () => {
+                sidebar.classList.toggle('-translate-x-full');
+            });
+
+            // --- Close sidebar on link click (for mobile) ---
+            const navLinks = navLinksContainer.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 768) { // md breakpoint in Tailwind
+                        sidebar.classList.add('-translate-x-full');
+                    }
+                });
+            });
+
+            // --- Copy Button Functionality ---
+            const allCopyButtons = document.querySelectorAll('.copy-btn');
+            allCopyButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const preElement = event.target.parentElement;
+                    const codeElement = preElement.querySelector('code');
+                    const codeToCopy = codeElement.innerText;
+
+                    const tempTextArea = document.createElement('textarea');
+                    tempTextArea.value = codeToCopy;
+                    document.body.appendChild(tempTextArea);
+                    tempTextArea.select();
+                    try {
+                        document.execCommand('copy');
+                        event.target.innerText = 'Copied!';
+                    } catch (err) {
+                        event.target.innerText = 'Error';
+                        console.error('Failed to copy: ', err);
+                    }
+                    document.body.removeChild(tempTextArea);
+
+                    setTimeout(() => {
+                        event.target.innerText = 'Copy';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
